@@ -1,15 +1,35 @@
 import './App.css'
-import Footer from './components/Footer'
-import HeaderBig from './components/HeaderBig.'
-import HeaderSmall from './components/HeaderSmall'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import FlightSearchPage from './pages/flights/FlightSearchPage'
+import FlightListPage from './pages/flights/FlightListPage'
+import FlightDetailPage from './pages/flights/FlightDetailPage'
+import MainLayout from './layouts/MainLayout'
+
+const router = createBrowserRouter([
+  {
+    path: "/flight",
+    element: <MainLayout/>,
+    children: [
+      {
+        index: true,
+        element: <FlightSearchPage/>
+      },
+      {
+        path: "find",
+        element: <FlightListPage/>
+      },
+      {
+        path: "detail",
+        element: <FlightDetailPage/>
+      }
+    ]
+  }
+])
 
 function App() {
   return (
     <>
-      <HeaderSmall></HeaderSmall>
-      {/* <HeaderBig></HeaderBig> */}
-
-      <Footer></Footer>
+      <RouterProvider router={router}></RouterProvider>
     </>
   )
 }
