@@ -21,7 +21,7 @@ const HeaderSmall = () => {
   }, [navigate]);
 
   const onButtonClickLogin = useCallback(() => {
-    // Please sync "Login page" to the project
+    navigate("/LoginPage");
   }, []);
     return (
         <header className="self-stretch flex flex-row items-start justify-between top-[0] z-[99] gap-[1.25rem] max-w-full text-left text-[1.875rem] font-poppins">

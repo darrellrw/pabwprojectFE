@@ -10,6 +10,9 @@ import TopUp from "./pages/TopUp.jsx";
 import ListHotel from "./pages/ListHotel.jsx";
 import DetailHotel from "./pages/DetailHotel.jsx";
 import PemesananKamar from "./pages/PemesananKamar.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
+import Register from "./pages/Register.jsx";
+import ForgotPassword from "./pages/ForgotPassword.jsx";
 
 function App() {
   const action = useNavigationType();
@@ -66,6 +69,9 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/LoginPage" element={<LoginPage />} />
+      <Route path="/Register" element={<Register />} />
+      <Route path="/ForgotPassword" element={<ForgotPassword />} />
       <Route path="/top-up" element={<TopUp />} />
       <Route path="/list-hotel" element={<ListHotel />} />
       <Route path="/detail-hotel" element={<DetailHotel />} />
