@@ -1,11 +1,6 @@
 import { useEffect } from "react";
-import {
-  Routes,
-  Route,
-  useNavigationType,
-  useLocation,
-} from "react-router-dom";
-import Home from './pages/Home.jsx'
+import { Routes, Route, useNavigationType, useLocation } from "react-router-dom";
+import Home from "./pages/Home.jsx";
 import TopUp from "./pages/TopUp.jsx";
 import ListHotel from "./pages/ListHotel.jsx";
 import DetailHotel from "./pages/DetailHotel.jsx";
@@ -13,6 +8,9 @@ import PemesananKamar from "./pages/PemesananKamar.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import Register from "./pages/Register.jsx";
 import ForgotPassword from "./pages/ForgotPassword.jsx";
+import AdminPage from "./pages/admin.jsx";
+import Log from "./pages/Log.jsx";
+import UserManagement from "./pages/users.jsx";
 
 function App() {
   const action = useNavigationType();
@@ -57,9 +55,7 @@ function App() {
     }
 
     if (metaDescription) {
-      const metaDescriptionTag = document.querySelector(
-        'head > meta[name="description"]'
-      );
+      const metaDescriptionTag = document.querySelector('head > meta[name="description"]');
       if (metaDescriptionTag) {
         metaDescriptionTag.content = metaDescription;
       }
@@ -69,6 +65,9 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/admin" element={<AdminPage />} />
+      <Route path="/log" element={<Log />} />
+      <Route path="/users" element={<UserManagement />} />
       <Route path="/LoginPage" element={<LoginPage />} />
       <Route path="/Register" element={<Register />} />
       <Route path="/ForgotPassword" element={<ForgotPassword />} />
