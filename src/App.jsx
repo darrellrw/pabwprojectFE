@@ -8,6 +8,10 @@ import LoginPage from './pages/dashboard/LoginPage'
 import RegisterPage from './pages/dashboard/RegisterPage'
 import ForgotPasswordPage from './pages/dashboard/ForgetPasswordPage'
 import HomePage from './pages/dashboard/HomePage'
+import DashboardAdmin from './pages/dashboard/DashboardAdminPage'
+import DashboardLayout from './layouts/DashboardLayout'
+import LogsPage from './pages/dashboard/LogsPage'
+import UserPage from './pages/dashboard/UsersPage'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +23,24 @@ const router = createBrowserRouter([
         element: <HomePage/>
       }
     ] 
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout/>,
+    children: [
+      {
+        index: true,
+        element: <DashboardAdmin/>
+      },
+      {
+        path: "log",
+        element: <LogsPage/>
+      },
+      {
+        path: "users",
+        element: <UserPage/>
+      }
+    ]
   },
   {
     path: "/login",

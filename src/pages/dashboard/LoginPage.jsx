@@ -22,7 +22,13 @@ function LoginPage() {
 
     useEffect(() => {
         if (cookie["token"]) {
-            navigate("/")
+            const decoded = jwtDecode(cookie["token"]);
+            if (decoded.role == 0) {
+                navigate("/dashboard");
+            } else {
+                navigate("/");
+            }
+
         }
     });
 
@@ -38,7 +44,7 @@ function LoginPage() {
             .then((res) => {
                 console.log(res);
                 const decoded = jwtDecode(res.data.token);
-                console.log(decoded.exp);
+                console.log(decoded);
 
                 setCookie("token", res.data.token, {
                     expires: new Date(Date.now() + decoded.exp),
