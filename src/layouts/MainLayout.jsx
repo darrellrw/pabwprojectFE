@@ -9,7 +9,7 @@ function MainLayout() {
             <Outlet></Outlet>
             <Footer></Footer>
         </>
-    )
+    );
 }
 
-export default MainLayout
+export default MainLayout;

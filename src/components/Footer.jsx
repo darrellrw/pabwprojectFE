@@ -1,3 +1,5 @@
+import Logo from "/icon.png";
+
 function Footer() {
     return (
         <>
@@ -5,7 +7,7 @@ function Footer() {
                 <div className="flex flex-wrap justify-between items-start">
                     <div className="">
                         <a className="flex items-center text-white text-2xl pb-5">
-                            <img src="../../icon.png" className="mr-5"></img>
+                            <img src={Logo} className="mr-5"></img>
                             <span className="uppercase">OnMyWay.</span>
                         </a>
                         <p className="text-white">Layanan pemesanan hotel dan tiket pesawat terbaik di Indonesia</p>
@@ -45,7 +47,7 @@ function Footer() {
                 </div>
             </footer>
         </>
-    )
+    );
 }
 
-export default Footer
+export default Footer;
