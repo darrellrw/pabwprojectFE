@@ -1,8 +1,8 @@
 import './App.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-// import FlightSearchPage from './pages/flights/FlightSearchPage'
-// import FlightListPage from './pages/flights/FlightListPage'
-// import FlightDetailPage from './pages/flights/FlightDetailPage'
+import FlightSearchPage from './pages/flights/FlightSearchPage'
+import FlightListPage from './pages/flights/FlightListPage'
+import FlightDetailPage from './pages/flights/FlightDetailPage'
 import MainLayout from './layouts/MainLayout'
 import LoginPage from './pages/dashboard/LoginPage'
 import RegisterPage from './pages/dashboard/RegisterPage'
@@ -70,24 +70,24 @@ const router = createBrowserRouter([
       
     ] 
   },
-  // {
-  //   path: "/flight",
-  //   element: <SubLayout/>,
-  //   children: [
-  //     {
-  //       index: true,
-  //       element: <FlightSearchPage/>
-  //     },
-  //     {
-  //       path: "find",
-  //       element: <FlightListPage/>
-  //     },
-  //     {
-  //       path: "detail",
-  //       element: <FlightDetailPage/>
-  //     }
-  //   ]
-  // },
+  {
+    path: "/flight",
+    element: <MainLayout/>,
+    children: [
+      {
+        index: true,
+        element: <FlightSearchPage/>
+      },
+      {
+        path: "find",
+        element: <FlightListPage/>
+      },
+      {
+        path: "detail",
+        element: <FlightDetailPage/>
+      }
+    ]
+  },
   {
     path: "/hotel",
     element: <MainLayout/>,

@@ -50,9 +50,8 @@ const Home = () => {
           Cari Hotel
         </h1>
       </Link>
-      <div
+      <Link to={"/flight"}
         className="bg-[#344E41] w-[26.063rem] rounded-3xl bg-accent flex flex-col items-center justify-start pt-[4.563rem] px-[1.25rem] pb-[2.25rem] box-border relative gap-[0.813rem] max-w-full cursor-pointer z-[1]"
-        // onClick={onIconCariPesawat}
       >
         <div className="w-[12rem] flex flex-row items-start justify-start py-[0rem] px-[2.688rem] box-border">
           <img
@@ -65,7 +64,7 @@ const Home = () => {
         <h1 className="m-0 relative text-inherit font-normal font-inherit z-[1] mq450:text-[1.5rem] mq1000:text-[2rem]">
           Cari Tiket Pesawat
         </h1>
-      </div>
+      </Link>
     </section>
     </div>
   );

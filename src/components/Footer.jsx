@@ -41,14 +41,14 @@ const Footer = () => {
                   Cari Hotel
                 </div>
               </Link>
-              <div
+              <Link
                 className="self-stretch flex flex-row items-center justify-start max-w-full cursor-pointer"
-                // onClick={onIconCariPesawat}
+                to={"/flight"}
               >
                 <div className="flex-1 relative leading-[1.813rem] inline-block max-w-full">
                   Cari Tiket Pesawat
                 </div>
-              </div>
+              </Link>
               <Link
                 className="self-stretch flex flex-row items-center justify-start max-w-full cursor-pointer"
                 to={"/topup"}
