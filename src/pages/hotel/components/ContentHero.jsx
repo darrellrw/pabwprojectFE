@@ -1,23 +1,18 @@
-import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 const ContentHero = () => {
-  const navigate = useNavigate();
-
-  const onHomepageTextClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
 
   return (
     <div className="w-[77.5rem] flex flex-row items-start justify-start gap-[0rem_3.75rem] max-w-full text-left text-[3.438rem] text-oldlace font-icon-small mq1050:flex-wrap mq750:gap-[0rem_1.875rem]">
       <div className="w-[44.5rem] flex flex-col items-start justify-start gap-[1.563rem_0rem] min-w-[44.5rem] max-w-full mq1050:flex-1 mq1050:min-w-full">
         <nav className="m-0 self-stretch flex flex-row items-start justify-start gap-[0rem_1.125rem] whitespace-nowrap text-left text-[0.938rem] text-secondary font-accent mq450:flex-wrap">
-          <div
+          <Link
             className="relative tracking-[0.15em] uppercase font-semibold cursor-pointer text-[#A3B18A]"
-            onClick={onHomepageTextClick}
+            to={"/"}
           >
             Homepage
-          </div>
+          </Link>
           <div className="w-[0.625rem] relative inline-block mq450:text-[1rem] mq450:w-full mq450:h-[0.525rem]">
           <img
                 className="inline-block mq450:text-[1rem] mq450:w-full mq450:h-[0.2rem]"

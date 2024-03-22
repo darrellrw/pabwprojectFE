@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Background from "../assets/Bali.svg";
+import Background from "../../assets/Bali.svg";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -35,7 +35,7 @@ const ForgotPassword = () => {
             </button>
           </form>
           <div className="mb-4 flex mt-3 ml-1 items-center justify-between">
-            <Link to={"/LoginPage"} className="text-black text-xs lg:text-sm sm:text-sm mr-4">
+            <Link to={"/login"} className="text-black text-xs lg:text-sm sm:text-sm mr-4">
               Back to Login
             </Link>
           </div>

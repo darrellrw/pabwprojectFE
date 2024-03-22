@@ -1,23 +1,7 @@
-import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 const Footer = () => {
-    const navigate = useNavigate();
-
-    const onIconHome = useCallback(() => {
-      navigate("/");
-    }, [navigate]);
-  
-    const onIconCariHotel = useCallback(() => {
-      navigate("/list-hotel");
-    }, [navigate]);
-  
-  //   const onIconCariPesawat = useCallback(() => {
-  //   }, []);
-  
-    const onIconTopUp = useCallback(() => {
-      navigate("/top-up");
-    }, [navigate]);
     return (
       <footer className="bg-[#344E41] self-stretch bg-accent overflow-hidden flex flex-col items-center justify-start pt-[6.25rem] px-[1.25rem] pb-[2.625rem] box-border gap-[3.75rem_0rem] max-w-full text-left text-[1.875rem] text-oldlace font-icon-small mq725:gap-[1.875rem_0rem] mq725:pt-[4.063rem] mq725:pb-[3rem] mq725:box-border text-white">
         <div className="w-[77.5rem] overflow-hidden flex flex-row items-start justify-start gap-[0rem_1.875rem] max-w-full mq1050:flex-wrap ">
@@ -41,22 +25,22 @@ const Footer = () => {
               Quick Links
             </h3>
             <div className="self-stretch flex flex-col items-start justify-start gap-[0.938rem_0rem] max-w-full text-[1.125rem] text-white-transparent font-accent">
-              <div
+              <Link
                 className="self-stretch flex flex-row items-center justify-start max-w-full cursor-pointer"
-                onClick={onIconHome}
+                to={"/"}
               >
                 <div className="flex-1 relative leading-[1.813rem] inline-block max-w-full">
                   Home
                 </div>
-              </div>
-              <div
+              </Link>
+              <Link
                 className="self-stretch flex flex-row items-center justify-start max-w-full cursor-pointer"
-                onClick={onIconCariHotel}
+                to={"/hotel"}
               >
                 <div className="flex-1 relative leading-[1.813rem] inline-block max-w-full">
                   Cari Hotel
                 </div>
-              </div>
+              </Link>
               <div
                 className="self-stretch flex flex-row items-center justify-start max-w-full cursor-pointer"
                 // onClick={onIconCariPesawat}
@@ -65,14 +49,14 @@ const Footer = () => {
                   Cari Tiket Pesawat
                 </div>
               </div>
-              <div
+              <Link
                 className="self-stretch flex flex-row items-center justify-start max-w-full cursor-pointer"
-                onClick={onIconTopUp}
+                to={"/topup"}
               >
                 <div className="flex-1 relative leading-[1.813rem] inline-block max-w-full">
                   Top-Up
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
           <div className="flex-1 overflow-hidden flex flex-col items-start justify-start gap-[1.563rem_0rem] min-w-[18.438rem] max-w-full text-[1.25rem]">

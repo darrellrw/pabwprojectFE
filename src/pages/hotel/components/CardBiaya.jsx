@@ -1,12 +1,8 @@
-import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 const CardBiaya = () => {
-    const navigate = useNavigate();
-    const onClickNavigatePagePembayaran = useCallback(() => {
-      navigate("/pembayaran-kamar");
-    }, [navigate]); 
-
+    
 
   return (
     <div className="w-[27.063rem] flex flex-col items-start justify-start gap-[2rem_0rem] min-w-[27.063rem] max-w-full text-left text-[1.125rem] text-darkslategray-100 font-montserrat lg:flex-1 mq450:gap-[1rem_0rem] mq750:min-w-full">
@@ -24,9 +20,11 @@ const CardBiaya = () => {
         <div className="self-stretch flex flex-row items-start justify-start gap-[0rem_1.331rem] max-w-full text-[0.875rem] mq450:flex-wrap">
         <input type="checkbox" id="confirm" name="confirm"/>
         <label className="flex-1 relative leading-[1.5rem] inline-block font-medium min-w-[13.688rem] max-w-full"> Saya telah meninjau dan menyetujui tarif dan komisi yang ditawarkan untuk pemesanan ini</label>
-          <button className="bg-[#344E41] cursor-pointer [border:none] py-[1.25rem] px-[1.25rem] bg-primary self-stretch rounded-lg flex flex-row items-start justify-center hover:bg-darkseagreen" onClick={onClickNavigatePagePembayaran}>
+        <Link to="/hotel/pemesanan">
+        <button className="bg-[#344E41] cursor-pointer [border:none] py-[1.25rem] px-[1.25rem] bg-primary self-stretch rounded-lg flex flex-row items-start justify-center hover:bg-darkseagreen">
             <b className="w-[5.18rem] relative text-[0.875rem] flex font-montserrat text-white text-center items-center justify-center shrink-0">Selanjutnya</b>
           </button>
+        </Link>
         </div>
       </div>
     </div>

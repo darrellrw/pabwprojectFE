@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Sidebar from '../components/Sidebar';
+import React, { useState, useEffect } from 'react';
+import Sidebar from '../../components/Sidebar';
 
 const Log = () => {
   const [logs, setLogs] = useState([]);
@@ -11,9 +11,12 @@ const Log = () => {
     setLogs(prevLogs => [...prevLogs, newLog]);
   };
 
-  // Contoh penggunaan: addLog('John Doe', 'Login');
+  useEffect(() => {
+    addLog('John Doe', 'Login'); // Add initial log entry only once
+  }, []);
 
   return (
+    
     <div className="flex">
       <Sidebar />
       <div className="flex-1 p-4">

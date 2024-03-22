@@ -1,12 +1,7 @@
-import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const CardDetailHotel = () => {
-  const navigate = useNavigate();
-
-  const onMenuButtonClick = useCallback(() => {
-    navigate("/pemesanan-kamar");
-  }, [navigate]);
+  
 
   return (
     <section className="self-stretch bg-oldlace overflow-hidden flex flex-row items-end justify-between pt-[2.688rem] pb-[2.694rem] pr-[4.688rem] pl-[6.188rem] box-border min-h-[25.25rem] max-w-full gap-[1.25rem] text-left text-[1.419rem] text-darkslategray-200 font-inter mq450:pl-[1.25rem] mq450:pt-[1.75rem] mq450:pb-[1.75rem] mq450:box-border mq750:pl-[3.063rem] mq750:pr-[2.313rem] mq750:box-border mq1275:flex-wrap">
@@ -79,14 +74,14 @@ const CardDetailHotel = () => {
             </div>
           </div>
         </div>
-        <button
+        <Link
           className="bg-[#344E41] rounded-3xl cursor-pointer py-[0.938rem] px-[2.125rem] bg-oldlace self-stretch rounded-79xl flex flex-row items-start justify-start whitespace-nowrap border-[1px] border-solid border-darkgray-200 hover:bg-lightgray-100 hover:box-border hover:border-[1px] hover:border-solid hover:border-dimgray-200"
-          onClick={onMenuButtonClick}
+          to = {"/hotel/pemesanan"}
         >
           <div className="flex-1 relative text-[0.938rem] leading-[1.744rem] font-inter text-dimgray-300 text-center text-white">
             Tentukan tanggal
           </div>
-        </button>
+        </Link>
       </div>
     </section>
   );

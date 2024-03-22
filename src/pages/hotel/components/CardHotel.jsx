@@ -1,12 +1,6 @@
-import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 const CardHotel = () => {
-  const navigate = useNavigate();
-
-  const onCardHotelContainerClick = useCallback(() => {
-    navigate("/detail-hotel");
-  }, [navigate]);
 
   return (
     <section className="w-[67.625rem] rounded-3xl flex flex-col items-start justify-start gap-[1.563rem_0rem] max-w-full text-left text-[1.363rem] text-darkslategray-200 font-inter">
@@ -76,9 +70,9 @@ const CardHotel = () => {
                 </div>
               </div>
               <div className="w-[14.6rem] flex flex-row items-start justify-start py-[0rem] px-[1.125rem] box-border">
-                <div
+                <Link
                   className="flex-1 flex flex-col items-end justify-end pt-[4.763rem] px-[0rem] pb-[0rem] box-border min-h-[3.5rem] cursor-pointer"
-                  onClick={onCardHotelContainerClick}
+                  to={"/hotel/detail"}
                 >
                   <button className="bg-[#344E41] text-white rounded-3xl cursor-pointer py-[1rem] pr-[1.25rem] pl-[1.75rem] bg-primary self-stretch rounded-981xl flex flex-col items-start justify-start border-[4px] border-solid border-primary">
                     <div className="flex flex-col items-start justify-start">
@@ -87,7 +81,7 @@ const CardHotel = () => {
                       </div>
                     </div>
                   </button>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
