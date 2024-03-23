@@ -23,10 +23,10 @@ function LoginPage() {
     useEffect(() => {
         if (cookie["token"]) {
             const decoded = jwtDecode(cookie["token"]);
-            if (decoded.role == 0) {
-                navigate("/dashboard");
-            } else {
+            if (decoded.role == 2) {
                 navigate("/");
+            } else {
+                navigate("/dashboard");
             }
 
         }

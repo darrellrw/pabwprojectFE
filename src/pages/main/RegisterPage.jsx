@@ -19,7 +19,7 @@ function RegisterPage() {
     const [passwordConfirm, setPasswordConfirm] = useState("");
     const [showPassword, setShowPassword] = useState(false);
 
-    const [role, setRole] = useState(0);
+    const [role, setRole] = useState(2);
 
     const navigate = useNavigate();
 

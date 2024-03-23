@@ -1,29 +1,69 @@
-import Logo from "/icon.png";
 import { Link } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
+import React, { useEffect, useState } from "react";
+import { useCookies } from "react-cookie";
 
 function Header() {
+    const [cookie, setCookie] = useCookies(["token"]);
+    const [decoded, setDecoded] = useState(cookie["token"] ? jwtDecode(cookie["token"]) : null);
+
     return (
         <>
-            <nav className="bg-[#588157] px-[5%] py-2">
-                <div className="flex flex-wrap justify-between items-center">
-                    <a className="flex items-center text-white text-2xl">
-                        <img src={Logo} className="mr-5"></img>
-                        <span className="uppercase">OnMyWay.</span>
-                    </a>
-                    <ul className="flex flex-row">
-                        <li className="m-2">
-                            <a className="py-2 px-4 text-white text-center block hover:text-blue-400 uppercase" href="#">Home</a>
-                        </li>
-                        <li className="m-2">
-                            <a className="py-2 px-4 text-white text-center block hover:text-blue-400 uppercase" href="#">Pemesanan</a>
-                        </li>
-                        <li className="m-2">
-                            <a className="py-2 px-4 text-white text-center block hover:text-blue-400 uppercase" href="#">Top-up</a>
-                        </li>
-                    </ul>
-                    <Link to={"/login"} className="px-8 py-3 bg-[#F3ECDC] rounded-full uppercase">Login</Link>
+            <header className="sticky px-[6.25rem] py-[0.82rem] bg-[url('./assets/header3x.png')] self-stretch flex flex-row items-start justify-between top-[0] z-[99] gap-[1.25rem] max-w-full text-left text-[1.875rem] font-poppins text-white">
+                <div className="flex flex-col items-start justify-start pt-[0.469rem] px-[0rem] pb-[0rem]">
+                    <div className="flex flex-row items-start justify-start gap-[0rem_0.375rem]">
+                        <div className="flex flex-col items-start justify-start pt-[0.219rem] px-[0rem] pb-[0rem]">
+                            <img className="w-[2.375rem] h-[2.375rem] relative" loading="lazy" alt="" src="../../group-7529.svg"/>
+                        </div>
+                        <h2 className="m-0 relative text-inherit tracking-[0.15em] uppercase font-medium font-inherit whitespace-nowrap">ONMYWAY.</h2>
+                    </div>
                 </div>
-            </nav>
+                <div className="w-[35.75rem] flex flex-col items-start justify-start pt-[1.25rem] px-[0rem] pb-[0rem] box-border max-w-full text-[0.938rem] text-white-transparent font-accent mq1000:w-[3.813rem]">
+                    <div className="flex flex-row items-start justify-start gap-[0rem_1.975rem] max-w-full mq725:gap-[0rem_1rem] mq1000:hidden">
+                        <Link to={"/"} className="relative tracking-[0.15em] uppercase font-semibold text-white cursor-pointer">
+                            Home
+                        </Link>
+                        <Link to={"/hotel"} className="flex flex-row items-start justify-start cursor-pointer">
+                            <div className="relative tracking-[0.15em] uppercase font-semibold whitespace-nowrap">
+                                Cari HOTEL
+                            </div>
+                        </Link>
+                        <Link to={"/flight"} className="flex flex-row items-start justify-start cursor-pointer">
+                            <div className="relative tracking-[0.15em] uppercase font-semibold whitespace-nowrap">
+                                Cari tiket Pesawat
+                            </div>
+                        </Link>
+                        <Link to={"/topup"} className="flex flex-row items-start justify-start cursor-pointer">
+                            <div className="relative tracking-[0.15em] uppercase font-semibold">
+                                Topup
+                            </div>
+                        </Link>
+                    </div>
+                </div>
+                {
+                    decoded ?
+                        (
+                            decoded.role == 2 ?
+                            <Link to={"/profile"} className="cursor-pointer rounded-3xl bg-oldlace flex flex-row items-start justify-start py-[0.75rem] px-[2.438rem] bg-[#344E41]">
+                                <div className="relative text-[0.938rem] tracking-[0.15em] uppercase font-semibold font-accent text-primary text-left text-white">
+                                    Profile
+                                </div>
+                            </Link>
+                            :
+                            <Link to={"/dashboard"} className="cursor-pointer rounded-3xl bg-oldlace flex flex-row items-start justify-start py-[0.75rem] px-[2.438rem] bg-[#344E41]">
+                                <div className="relative text-[0.938rem] tracking-[0.15em] uppercase font-semibold font-accent text-primary text-left text-white">
+                                    Dashboard
+                                </div>
+                            </Link>
+                        )
+                    :
+                    <Link to={"/login"} className="cursor-pointer rounded-3xl bg-oldlace flex flex-row items-start justify-start py-[0.75rem] px-[2.438rem] bg-[#344E41]">
+                        <div className="relative text-[0.938rem] tracking-[0.15em] uppercase font-semibold font-accent text-primary text-left text-white">
+                            Login
+                        </div>
+                    </Link>
+                }
+            </header>
         </>
     );
 }
