@@ -16,6 +16,7 @@ import ListHotel from './pages/hotel/ListHotel'
 import DetailHotel from './pages/hotel/DetailHotel'
 import TopUp from './pages/dashboard/TopUp'
 import PemesananKamar from './pages/hotel/PemesananKamar'
+import HistoryPemesanan from './pages/hotel/History'
 
 const router = createBrowserRouter([
   {
@@ -104,6 +105,12 @@ const router = createBrowserRouter([
         path: "pemesanan",
         element: <PemesananKamar/>
       },
+    ]
+  },
+  {
+    path: "/history-pemesanan",
+    element: <HistoryPemesanan/>,
+    children: [
     ]
   }
 ])
